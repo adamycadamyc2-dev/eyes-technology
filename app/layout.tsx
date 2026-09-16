@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SmoothScroll from "../components/SmoothScroll";
 import { I18nProvider } from "../lib/i18n";
@@ -20,7 +21,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MT5 ULTRA | Intelligence, Redefined",
+  title: "EYES TECHNOLOGY | Умные очки с ИИ",
   description: "Next-generation AI Smart Glasses. See the future on your face.",
 };
 
@@ -30,6 +31,25 @@ export default function RootLayout({
   return (
     <html lang="ru" className="dark">
       <body className={`${space.variable} ${inter.variable} ${jetbrains.variable} bg-background text-text-primary antialiased selection:bg-cyan selection:text-background`}>
+        
+        {/* Правильное добавление Google Analytics в Next.js */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XXXXXXXXXX');
+            `,
+          }}
+        />
+
         <I18nProvider>
           <SmoothScroll>
             {children}
@@ -38,17 +58,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-         </body>
-       </html>
-     );
-   }
-<script
-  dangerouslySetInnerHTML={{
-    __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    `,
-  }}
-/>
+}
