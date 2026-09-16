@@ -1,0 +1,43 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: "#0A0A0A",
+        surface: "#111111",
+        graphite: "#171717",
+        cyan: "#00F0FF",
+        purple: "#B026FF",
+        "text-primary": "#FFFFFF",
+        "text-secondary": "#A1A1AA",
+        "text-muted": "#71717A",
+        "glass-bg": "rgba(255, 255, 255, 0.05)",
+        "glass-border": "rgba(255, 255, 255, 0.10)",
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+        display: ["var(--font-space)"],
+        mono: ["var(--font-jetbrains)"],
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-mesh": "radial-gradient(at 0% 0%, rgba(0, 240, 255, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(176, 38, 255, 0.15) 0px, transparent 50%)",
+      },
+      animation: {
+        marquee: 'marquee 20s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
