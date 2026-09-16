@@ -38,12 +38,10 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-// app/layout.tsx - добавить в <head>:
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-/>
+         </body>
+       </html>
+     );
+   }
 <script
   dangerouslySetInnerHTML={{
     __html: `
