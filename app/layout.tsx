@@ -22,7 +22,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "EYES TECHNOLOGY | Умные очки с ИИ",
-  description: "Next-generation AI Smart Glasses. See the future on your face.",
+  description: "Next-generation AI Smart Glasses.",
 };
 
 export default function RootLayout({
@@ -31,8 +31,6 @@ export default function RootLayout({
   return (
     <html lang="ru" className="dark">
       <body className={`${space.variable} ${inter.variable} ${jetbrains.variable} bg-background text-text-primary antialiased selection:bg-cyan selection:text-background`}>
-        
-        {/* Правильное добавление Google Analytics в Next.js */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
@@ -49,7 +47,6 @@ export default function RootLayout({
             `,
           }}
         />
-
         <I18nProvider>
           <SmoothScroll>
             {children}
